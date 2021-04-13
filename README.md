@@ -4,3 +4,4 @@ This consists of the notebook that predicts the category of the items of the e-c
 It includes a text classification technique using RNN with LSTM unit, image classification technique using ResNet and an ensemble learning technique.
 
 A predictive app is to be deployed sonn based on this project.
+![]()
