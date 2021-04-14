@@ -14,7 +14,7 @@ We pre-process the data by converting the text into ASCII and stemming them to g
 
 ## Model
 We usde *LSTM units* because it mitigates the problem of vanishing gradient and gradient explosion by the use of gated structures.
-![](rnn.png)
+![](images/rnn.png)
 
 ## Training
 Now we train the model on the train dataset. For the loss function `nn.NLLLoss` is appropriate since the last layer of the RNN is `nn.LofSoftmax`. 
@@ -26,6 +26,13 @@ Each loop is trained by:
 * comapre final output to target
 * back propagate
 * return the output and loss
+
+## Image Classification
+The image of each item can appear in different poses or even on or off human models. Our dataset consists of 43k images across 27 classes. And our training dataset contains 41.6k images. Currently, CNNs are the best machine learning models to classify images. Training these powerfulneural nets takes a lot of computing power and data. So, here we use a pre trained model(InceptionResNet) that has been trained on Image-Net dataset, since, it is capable of extracting useful features from images of a wide range of classes.
+
+## Tying the models together
+
+![](images/CompleteModel.png)
 
 A predictive app is to be deployed soon based on this project.
 
