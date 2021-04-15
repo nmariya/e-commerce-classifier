@@ -28,7 +28,12 @@ Each loop is trained by:
 * return the output and loss
 
 ## Image Classification
-The image of each item can appear in different poses or even on or off human models. Our dataset consists of 43k images across 27 classes. And our training dataset contains 41.6k images. Currently, CNNs are the best machine learning models to classify images. Training these powerfulneural nets takes a lot of computing power and data. So, here we use a pre trained model(InceptionResNet) that has been trained on Image-Net dataset, since, it is capable of extracting useful features from images of a wide range of classes.
+The image of each item can appear in different poses or even on or off human models. Our dataset consists of 43k images across 27 classes. And our training dataset contains 41.6k images. Currently, CNNs are the best machine learning models to classify images. Training these powerful neural nets takes a lot of computing power and data. So, we go for **Transfer Learning** where we use a pre trained model(InceptionResNet) that has been trained on Image-Net dataset, since, it is capable of extracting useful features from images of a wide range of classes.
+
+## Preprocessing 
+In order to use our images with a network trained on the ImageNet dataset we need to rescale the images to `224 x 224` and normalize them as per ImageNet standards.
+
+We also applied **Data Augmentation**, which is the generation of more training data by cropping and re-aligning the original image of the train dataset to make the network more robust to varying image orientations of the same product.
 
 ## Tying the models together
 
